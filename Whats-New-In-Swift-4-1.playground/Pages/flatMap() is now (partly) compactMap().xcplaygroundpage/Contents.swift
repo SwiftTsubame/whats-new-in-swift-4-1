@@ -11,7 +11,12 @@
 */
 let array = ["1", "2", "Fish"]
 let numbers = array.compactMap { Int($0) }
+//let numberWithFlatMap = array.flatMap { Int($0) } // uncomment this line will result in a warning: 'flatMap' is deprecated: Please use compactMap(_:) for the case where closure returns an optional value
 print(numbers)
+
+let grid = [[1, 2, 3], [4, 5, 6]]
+let vector = grid.flatMap{ $0 }
+print(vector)
 /*:
  That will create an `Int` array containing the numbers 1 and 2, because "Fish" will fail conversion to Int, return nil, and be ignored.
 
